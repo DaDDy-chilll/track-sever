@@ -1,13 +1,15 @@
 require("./models/User");
+require("./models/Track");
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
-
+const trackRoutes = require("./routes/trackRoute");
 const requireAuth = require("./middlewares/requireAuth");
 
 const app = express();
 app.use(express.json());
 app.use(authRoutes);
+app.use(trackRoutes)
 const MONGO_URL =
   "mongodb+srv://nasa-api:kmd123@nasacluster.uvu3kll.mongodb.net/track?retryWrites=true&w=majority";
 
